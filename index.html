@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AQA A-Level Chemistry revision guide for amino acids, proteins, DNA and enzymes with exam-focused content.">
+    <meta name="keywords" content="AQA, A-Level, Chemistry, amino acids, proteins, DNA, enzymes, revision, exam">
+    <title>Amino Acids, Proteins & DNA - Chemistry Revision</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --amino-color: #10b981;
+            --peptide-color: #f59e0b;
+            --enzyme-color: #8b5cf6;
+            --dna-color: #ef4444;
+            --drug-color: #6366f1;
+            --exam-color: #14b8a6;
+            --primary-blue: #1e3a8a;
+            --light-bg: #f5f5f5;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: var(--light-bg);
+            overflow-x: hidden;
+        }
+        
+        /* Header and Navigation */
+        header {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        nav h1 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            background-color: rgba(255,255,255,0.2);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+            top: 15px;
+        }
+        
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 120px auto 0;
+            padding: 20px;
+        }
+        
+        .hero {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .search-box {
+            margin: 20px auto;
+            max-width: 500px;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 12px 20px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 5px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .btn-secondary {
+            background-color: #6b7280;
+            color: white;
+        }
+        
+        /* Exam Topics Section */
+        .exam-topics {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .exam-topics h2 {
+            color: #dc2626;
+            margin-bottom: 20px;
+        }
+        
+        .exam-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .exam-card {
+            background-color: #fef2f2;
+            border: 2px solid #fca5a5;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        
+        .exam-card h3 {
+            color: #dc2626;
+            margin-bottom: 10px;
+        }
+        
+        .exam-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .exam-card li {
+            padding: 3px 0;
+            font-size: 0.9rem;
+        }
+        
+        /* Content Sections */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .amino-acids { border-left-color: var(--amino-color); }
+        .peptides { border-left-color: var(--peptide-color); }
+        .enzymes { border-left-color: var(--enzyme-color); }
+        .dna { border-left-color: var(--dna-color); }
+        .drugs { border-left-color: var(--drug-color); }
+        .exam-tips { border-left-color: var(--exam-color); }
+        
+        .section h2 {
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .section h3 {
+            margin: 25px 0 15px;
+            color: #374151;
+        }
+        
+        .amino-acids h2 { color: var(--amino-color); }
+        .peptides h2 { color: var(--peptide-color); }
+        .enzymes h2 { color: var(--enzyme-color); }
+        .dna h2 { color: var(--dna-color); }
+        .drugs h2 { color: var(--drug-color); }
+        .exam-tips h2 { color: var(--exam-color); }
+        
+        .icon {
+            font-size: 1.5em;
+        }
+        
+        /* Content Boxes */
+        .key-point {
+            background-color: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .exam-alert {
+            background-color: #fee2e2;
+            border-left: 4px solid #ef4444;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+            font-weight: 600;
+        }
+        
+        .formula-box {
+            background-color: #e0e7ff;
+            border: 2px solid #6366f1;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+        
+        .remember-box {
+            background-color: #d1fae5;
+            border: 2px dashed #10b981;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .definition {
+            background-color: #f3f4f6;
+            border-left: 4px solid #6b7280;
+            padding: 15px 20px;
+            margin: 10px 0;
+            border-radius: 0 8px 8px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .definition:hover {
+            background-color: #e5e7eb;
+        }
+        
+        .definition strong {
+            color: #1f2937;
+            text-decoration: underline;
+        }
+        
+        .mnemonic {
+            background-color: #fef3c7;
+            border: 2px solid #f59e0b;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .exam-question {
+            background-color: #e0e7ff;
+            border: 2px solid #8b5cf6;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .exam-question strong {
+            color: #6366f1;
+        }
+        
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        
+        th, td {
+            border: 1px solid #e5e7eb;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f3f4f6;
+            font-weight: 600;
+        }
+        
+        /* Interactive Elements */
+        .highlight {
+            background-color: #fef08a;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+        
+        .conditions {
+            background-color: #fce7f3;
+            border: 1px solid #ec4899;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin: 5px 0;
+            font-weight: 500;
+        }
+        
+        /* Quick Reference */
+        .quick-ref {
+            background-color: #f0f9ff;
+            border: 2px solid #0ea5e9;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .quick-ref h2 {
+            color: #0284c7;
+            margin-bottom: 20px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+        
+        footer p {
+            margin: 5px 0;
+        }
+        
+        /* Dark Mode Toggle */
+        .theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary-blue);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #1f2937;
+            color: #e5e7eb;
+        }
+        
+        body.dark-mode .section,
+        body.dark-mode .hero,
+        body.dark-mode .exam-topics {
+            background-color: #374151;
+            color: #e5e7eb;
+        }
+        
+        body.dark-mode h3 {
+            color: #d1d5db;
+        }
+        
+        body.dark-mode .definition {
+            background-color: #4b5563;
+        }
+        
+        body.dark-mode table th {
+            background-color: #4b5563;
+        }
+        
+        body.dark-mode table td,
+        body.dark-mode table th {
+            border-color: #6b7280;
+        }
+        
+        body.dark-mode .search-box input {
+            background-color: #4b5563;
+            border-color: #6b7280;
+            color: #e5e7eb;
+        }
+        
+        /* Print Styles */
+        @media print {
+            header, footer, .theme-toggle, .no-print {
+                display: none;
+            }
+            
+            main {
+                margin-top: 0;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+            }
+            
+            body {
+                background-color: white;
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .exam-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background-color: var(--primary-blue);
+                flex-direction: column;
+                padding: 20px;
+            }
+            
+            .nav-links.show {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            main {
+                margin-top: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header>
+        <nav>
+            <h1>🧪 Amino Acids, Proteins & DNA</h1>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#amino-acids">Amino Acids</a></li>
+                <li><a href="#peptides">Peptides</a></li>
+                <li><a href="#enzymes">Enzymes</a></li>
+                <li><a href="#dna">DNA</a></li>
+                <li><a href="#drugs">Drugs</a></li>
+                <li><a href="#exam-tips">Exam Tips</a></li>
+                <li><a href="#quick-ref">Quick Reference</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search topics..." onkeyup="searchContent()">
+            </div>
+            <button class="btn btn-secondary" onclick="scrollToSection('quick-ref')">⚡ Quick Reference</button>
+        </div>
+        
+        <!-- High-Frequency Exam Topics -->
+        <div class="exam-topics">
+            <h2>🔥 High-Frequency Exam Topics</h2>
+            <div class="exam-grid">
+                <div class="exam-card">
+                    <h3>Drawing Structures (4-6 marks)</h3>
+                    <ul>
+                        <li>• Amino acid at different pH values</li>
+                        <li>• Formation of dipeptide (show mechanism)</li>
+                        <li>• Products of hydrolysis (acid vs alkaline)</li>
+                        <li>• Optical isomers of amino acids</li>
+                    </ul>
+                </div>
+                <div class="exam-card">
+                    <h3>Explain Questions (4-6 marks)</h3>
+                    <ul>
+                        <li>• How primary → tertiary structure</li>
+                        <li>• Why enzymes are specific</li>
+                        <li>• Protein denaturation effects</li>
+                        <li>• Drug stereoselectivity</li>
+                    </ul>
+                </div>
+                <div class="exam-card">
+                    <h3>Calculations (2-4 marks)</h3>
+                    <ul>
+                        <li>• Rf values in TLC</li>
+                        <li>• Number of dipeptides possible</li>
+                        <li>• H-bonds in DNA fragments</li>
+                        <li>• Moles of water in peptide formation</li>
+                    </ul>
+                </div>
+                <div class="exam-card">
+                    <h3>Application (3-5 marks)</h3>
+                    <ul>
+                        <li>• Cisplatin mechanism steps</li>
+                        <li>• Side effects explanation</li>
+                        <li>• Enzyme inhibition in drugs</li>
+                        <li>• Protein in buffer solutions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Content Sections -->
+        <div class="grid-container">
+            <!-- Amino Acids Section -->
+            <div class="section amino-acids" id="amino-acids">
+                <h2><span class="icon">🔬</span> AMINO ACIDS</h2>
+                
+                <div class="formula-box">
+                    General Formula: RCH(NH₂)COOH
+                </div>
+                
+                <div class="key-point">
+                    <strong>Key Feature:</strong> Contains BOTH amine (-NH₂) AND carboxyl (-COOH) groups on the SAME carbon (α-amino acids)
+                </div>
+                
+                <h3>Optical Isomerism</h3>
+                <div class="remember-box">
+                    <strong>Remember:</strong> ALL amino acids show optical isomerism EXCEPT <span class="highlight">glycine</span> (R = H, no chiral carbon)
+                </div>
+                
+                <h3>Amphoteric Nature</h3>
+                <div class="exam-alert">
+                    ⚠️ EXAM ESSENTIAL: Must show BOTH reactions!
+                </div>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>With Acids (HCl)</th>
+                            <th>With Bases (NaOH)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>NH₂ + H⁺ → NH₃⁺<br>Forms positive ion</td>
+                            <td>COOH + OH⁻ → COO⁻ + H₂O<br>Forms negative ion</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="exam-question">
+                    <strong>🎯 Common Exam Question:</strong><br>
+                    "Draw the structure of alanine at pH 2, pH 6 (pI), and pH 11"<br>
+                    <em>Remember: Show correct charges on each group!</em>
+                </div>
+                
+                <h3>pH Effects</h3>
+                <div class="definition" onclick="copyDefinition(this)">
+                    <strong>Isoelectric point:</strong> The pH at which the amino acid exists as a zwitterion / has no net charge
+                </div>
+                <div class="definition" onclick="copyDefinition(this)">
+                    <strong>Zwitterion:</strong> A dipolar ion / has both a positive and a negative charge
+                </div>
+                
+                <div class="mnemonic">
+                    pH < pI → BASE behavior<br>
+                    pH > pI → ACID behavior<br>
+                    pH = pI → ZWITTERION<br>
+                    <span style="font-size: 0.9em; font-weight: normal;">(pI = isoelectric point)</span>
+                </div>
+            </div>
+            
+            <!-- Peptides Section -->
+            <div class="section peptides" id="peptides">
+                <h2><span class="icon">🔗</span> PEPTIDES & PROTEINS</h2>
+                
+                <div class="formula-box">
+                    Peptide Formation:<br>
+                    Amino acid + Amino acid → Dipeptide + H₂O
+                </div>
+                
+                <div class="key-point">
+                    <strong>Peptide link:</strong> -CONH- (amide link)<br>
+                    <strong>Remember:</strong> 2 amino acids → 2 different dipeptides possible!
+                </div>
+                
+                <h3>Hydrolysis Methods</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Method</th>
+                            <th>Conditions</th>
+                            <th>Products</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Acid</strong></td>
+                            <td class="conditions">6 mol dm⁻³ HCl<br>Reflux 24 hours</td>
+                            <td>NH₃⁺ ions</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Alkaline</strong></td>
+                            <td class="conditions">Moderately conc. NaOH<br>Heat</td>
+                            <td>COO⁻ ions</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="exam-question">
+                    <strong>🎯 Common Exam Question:</strong><br>
+                    "Draw the products when a dipeptide is hydrolysed under acidic conditions"<br>
+                    <em>Key: All amino acids will have NH₃⁺ groups!</em>
+                </div>
+                
+                <h3>Protein Structure Levels</h3>
+                <div class="remember-box">
+                    <strong>1° Primary:</strong> Sequence (Gly-Ala-Phe)<br>
+                    <strong>2° Secondary:</strong> α-helix (3.6 aa/turn), β-sheet<br>
+                    <strong>3° Tertiary:</strong> 3D shape<br>
+                    <strong>4° Quaternary:</strong> Multiple chains
+                </div>
+                
+                <div class="exam-alert">
+                    ⚠️ Know ALL bonding types in tertiary structure:
+                    <ul>
+                        <li>Van der Waals (non-polar: Leu, Val, Phe)</li>
+                        <li>H-bonds (polar: Ser -OH, Gln -CONH₂)</li>
+                        <li>Ionic bonds (charged: Lys -NH₃⁺, Asp -COO⁻)</li>
+                        <li>S-S bonds (ONLY between cysteines)</li>
+                    </ul>
+                </div>
+                
+                <div class="exam-question">
+                    <strong>🎯 Common 6-Mark Question:</strong><br>
+                    "Explain how the primary structure determines the tertiary structure"<br>
+                    <em>Points needed: Sequence determines R groups → R groups interact → 
+                    specific 3D shape → shape determines function</em>
+                </div>
+            </div>
+            
+            <!-- Enzymes Section -->
+            <div class="section enzymes" id="enzymes">
+                <h2><span class="icon">⚗️</span> ENZYMES</h2>
+                
+                <div class="definition" onclick="copyDefinition(this)">
+                    <strong>Enzyme:</strong> A biological catalyst / protein that speeds up the rate of a reaction
+                </div>
+                <div class="definition" onclick="copyDefinition(this)">
+                    <strong>Substrate:</strong> The reactant in an enzyme-catalysed reaction / molecule that binds to the active site
+                </div>
+                
+                <div class="key-point">
+                    <strong>Active site:</strong> Region with complementary shape to substrate<br>
+                    <strong>Stereospecificity:</strong> Only ONE enantiomer fits
+                </div>
+                
+                <h3>Models</h3>
+                <div class="mnemonic">
+                    Lock & Key = Fixed shape<br>
+                    Induced Fit = Flexible shape
+                </div>
+                
+                <h3>Inhibition</h3>
+                <div class="remember-box">
+                    <strong>Competitive:</strong> Similar shape to substrate → competes for active site<br>
+                    <strong>Drug design:</strong> Many drugs work by enzyme inhibition
+                </div>
+                
+                <div class="exam-question">
+                    <strong>🎯 Common Exam Question:</strong><br>
+                    "Explain why only one optical isomer of a drug may be effective"<br>
+                    <em>Key: Active site is stereospecific → only one enantiomer has complementary shape</em>
+                </div>
+            </div>
+            
+            <!-- DNA Section -->
+            <div class="section dna" id="dna">
+                <h2><span class="icon">🧬</span> DNA STRUCTURE</h2>
+                
+                <h3>Nucleotide Components</h3>
+                <ol>
+                    <li><span class="highlight">Phosphate group</span> (dihydrogen phosphate)</li>
+                    <li><span class="highlight">Pentose sugar</span> (2-deoxyribose)</li>
+                    <li><span class="highlight">Organic base</span>:
+                        <ul style="margin-left: 20px;">
+                            <li>Purines: A, G (double ring)</li>
+                            <li>Pyrimidines: C, T (single ring)</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <div class="mnemonic">
+                    Base Pairing Rules:<br>
+                    A-T = 2 H-bonds<br>
+                    C-G = 3 H-bonds<br>
+                    "AT 2gether, CG has 3"
+                </div>
+                
+                <div class="exam-alert">
+                    ⚠️ Strands separate WITHOUT breaking covalent bonds!<br>
+                    (Only H-bonds between bases break)
+                </div>
+                
+                <div class="exam-question">
+                    <strong>🎯 Common Calculation:</strong><br>
+                    "Calculate the number of H-bonds in a DNA fragment with 40% G-C base pairs"<br>
+                    <em>Method: If 40% GC, then 60% AT. For 100 base pairs: 
+                    (40 × 3) + (60 × 2) = 240 H-bonds</em>
+                </div>
+            </div>
+            
+            <!-- Drugs Section -->
+            <div class="section drugs" id="drugs">
+                <h2><span class="icon">💊</span> CISPLATIN</h2>
+                
+                <div class="formula-box">
+                    [PtCl₂(NH₃)₂]<br>
+                    Square planar, CN = 4
+                </div>
+                
+                <div class="key-point">
+                    Only <span class="highlight">cis-isomer</span> is active!<br>
+                    (2 Cl⁻ ions next to each other)
+                </div>
+                
+                <h3>Mechanism (4 steps)</h3>
+                <ol>
+                    <li><strong>Hydrolysis:</strong> Cl⁻ → H₂O (inside cell)</li>
+                    <li><strong>1st substitution:</strong> Guanine N7 replaces H₂O</li>
+                    <li><strong>2nd substitution:</strong> Another guanine N7 bonds</li>
+                    <li><strong>Result:</strong> Intrastrand crosslink → prevents replication → apoptosis</li>
+                </ol>
+                
+                <div class="exam-question">
+                    <strong>🎯 Common Exam Question:</strong><br>
+                    "Explain why cisplatin can cause side effects"<br>
+                    <em>Key points: Binds to DNA in healthy cells too → 
+                    affects rapidly dividing cells (hair, blood, immune cells)</em>
+                </div>
+                
+                <div class="remember-box">
+                    <strong>Side effects:</strong> Hair loss, immune suppression, anaemia<br>
+                    <strong>Why?</strong> Affects ALL rapidly dividing cells
+                </div>
+            </div>
+            
+            <!-- Exam Tips Section -->
+            <div class="section exam-tips" id="exam-tips">
+                <h2><span class="icon">💡</span> EXAM SUCCESS TIPS</h2>
+                
+                <h3>Common Mark Scheme Points</h3>
+                <ul style="list-style: none;">
+                    <li>✓ Show BOTH reactions for amphoteric</li>
+                    <li>✓ State "non-superimposable mirror images"</li>
+                    <li>✓ Link enzyme shape to substrate</li>
+                    <li>✓ State number of H-bonds in DNA</li>
+                    <li>✓ Explain cis- vs trans- for cisplatin</li>
+                </ul>
+                
+                <h3>Calculations</h3>
+                <div class="formula-box">
+                    Rf = distance by spot ÷ distance by solvent
+                </div>
+                
+                <div class="exam-question">
+                    <strong>🎯 TLC Questions:</strong>
